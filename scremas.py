@@ -1,18 +1,25 @@
-from typing import List
-
 from pydantic import BaseModel
-from datetime import date
 
 
-class Genre(BaseModel):
+class UserList(BaseModel):
+    id: str
+    username: str
+    password: str
+    first_name: str
+    last_name: str
+    create_at: str
+
+
+class StudentModel(BaseModel):
+    user_id: int
     name: str
+    surname: str
+    item_id: str
 
-
-class Book(BaseModel):
-    title: str
-    writer: str
-    duration: str
-    date: date
-    summary: str
-    genres: List[Genre]
-    num_pages: int
+#
+# class AutoId(BaseModel):
+#     username: str
+#     password: str
+#     first_name: str
+#     last_name: str
+#     create_at: str
